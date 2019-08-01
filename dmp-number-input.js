@@ -20,7 +20,6 @@ class DmpNumberInput extends PolymerElement {
         }
         * {
           box-sizing: border-box;
-          box-shadow: 0 0 0 1px black;
         }
         .input_container{
           display: flex;
