@@ -17,5 +17,5 @@
     "start": "node ./node_modules/polymer-cli/bin/polymer.js serve",
     "init": "node ./node_modules/polymer-cli/bin/polymer.js init"
   },
-  "version": "0.1.0"
+  "version": "0.1.1"
 }
