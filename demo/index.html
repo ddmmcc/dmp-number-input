@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>dmp-number-input demo</title>
+
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <script type="module">
+      import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
+      import '@polymer/iron-demo-helpers/demo-snippet';
+    </script>
+
+    <script type="module" src="../dmp-number-input.js"></script>
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic dmp-number-input demo</h3>
+      <demo-snippet>
+        <template>
+          <dmp-number-input></dmp-number-input>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>dmp-number-input demo adding each 10</h3>
+      <demo-snippet>
+        <template>
+          <dmp-number-input step="10"></dmp-number-input>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>dmp-number-input demo width min and max</h3>
+      <demo-snippet>
+        <template>
+          <dmp-number-input step="10" min="-20" max="100" value="30"></dmp-number-input>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>dmp-number-input demo width label</h3>
+      <demo-snippet>
+        <template>
+          <dmp-number-input label="Age: " min="18" max="130" value="18"></dmp-number-input>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>dmp-number-input demo width label inline</h3>
+      <demo-snippet>
+        <template>
+          <dmp-number-input inline label="Age: " min="18" max="130" value="18"></dmp-number-input>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>dmp-number-input demo width label inline</h3>
+      <demo-snippet>
+        <template>
+          <dmp-number-input id="demoValidate" required min="18" max="130" value="200" step="10"></dmp-number-input>
+          <button id="btnValidate">Validate</button>
+          <div id="validateResult">Result: <span></span></div>
+          <script>
+            const validateResult = document.querySelector("#validateResult span")
+            const btn = document.querySelector("#btnValidate")
+            const el = document.querySelector("#demoValidate")
+            btn.addEventListener("click", (e) => {
+              validateResult.innerHTML = el.validate();
+            })
+          </script>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>
